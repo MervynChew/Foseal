@@ -1,0 +1,87 @@
+/* src/Farmer.css */
+.farmer-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.top-bar select {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid rgba(150, 150, 150, 0.4);
+  /* Light grey border */
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  /* Softer glass effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(6px);
+  /* Slight blur */
+  -webkit-backdrop-filter: blur(6px);
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 20 20' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L10 12L15 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.top-bar select:focus {
+  outline: none;
+  border-color: rgba(120, 120, 120, 0.5);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.product-details {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.data-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.data-column {
+  flex: 1;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .top-bar select {
+    font-size: 0.95rem;
+  }
+}

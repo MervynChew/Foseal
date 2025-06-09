@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  /* Replace solid color with gradient */
+  background: linear-gradient(to bottom,
+      #3e2f1c,
+      /* solid color with opacity */
+      rgba(131, 105, 83, 0)
+      /* fully transparent */
+    );
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+}
+
+.header-nav .header-button {
+  background-color: #d6b746;
+  color: #3e2f1c;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.header-nav .header-button:hover {
+  background-color: #90be6d;
+}

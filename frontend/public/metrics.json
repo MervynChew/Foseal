@@ -1,0 +1,18 @@
+{
+  "preharvest": {
+    "air_humidity": 75,
+    "air_temperature": 10,
+    "soil_moisture": 80,
+    "soil_ph": 6.1,
+    "N": 30,
+    "P": 30,
+    "K": 110
+  },
+  "storage": {
+    "storage_temperature": 5,
+    "storage_humidity": 92,
+    "ventilation": "moderate",
+    "light_exposure": "low",
+    "storage_duration": 90
+  }
+}

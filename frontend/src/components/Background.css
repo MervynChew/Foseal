@@ -1,0 +1,20 @@
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  /* Set transparency here (0 = fully transparent, 1 = fully opaque) */
+  filter: brightness(0.9);
+  /* Optional: make it slightly dimmer */
+  pointer-events: none;
+}

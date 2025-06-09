@@ -1,0 +1,70 @@
+.score-board {
+  background: #fdfdfd;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.score-board h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.overall-score {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #e3f9e5;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+}
+
+.score-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.score-label {
+  font-size: 1.2rem;
+  color: #2e7d32;
+}
+
+.progress-bar-container {
+  margin-bottom: 1.5rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+}
+
+.percentage {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}

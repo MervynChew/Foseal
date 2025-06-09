@@ -1,0 +1,167 @@
+.app-wrapper {
+  min-height: 100vh;
+  /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  /* vertical stacking */
+}
+
+.content {
+  flex: 1;
+  /* take all remaining vertical space */
+}
+
+/* Main homepage container */
+.homepage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 3rem;
+  min-height: 60vh;
+}
+
+/* Left side: image and description stacked vertically */
+.homepage-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.homepage-left img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.homepage-description {
+  font-family: arial;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0rem;
+  background-color: #ffffff;
+  opacity: 0.6;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #d6b746;
+  border-width: 2px;
+  padding: 20px;
+}
+
+/* Right side: tagline and buttons stacked vertically */
+.homepage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.homepage-tagline {
+  font-family: arial;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  max-width: 350px;
+}
+
+/* Buttons container */
+.homepage-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Remove default link styling */
+.homepage-buttons a {
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Style buttons */
+.homepage-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.homepage-buttons button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active effect */
+.homepage-buttons button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive layout: stack vertically on medium and small screens */
+@media (max-width: 768px) {
+  .homepage {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .homepage-left,
+  .homepage-right {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .homepage-left img {
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .homepage-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    opacity: 0.6;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #d6b746;
+    border-width: 2px;
+    padding: 20px;
+  }
+
+  .homepage-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .homepage-buttons {
+    max-width: 200px;
+  }
+
+  .homepage-buttons button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}

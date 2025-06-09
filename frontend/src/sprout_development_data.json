@@ -1,0 +1,101 @@
+{
+  "crop": "Organic Potato",
+  "image": "/assets/potato.webp",
+  "stages": [
+    {
+      "SproutDevelopment": {
+        "status": "⚠ Some conditions are outside the ideal range.",
+        "issues": [
+          {
+            "parameter": "Soil pH",
+            "actual": 7.2,
+            "ideal_range": "5.5–6.5",
+            "explanation": "The soil pH is too high, which may reduce nutrient absorption and affect early root growth."
+          },
+          {
+            "parameter": "Soil Moisture",
+            "actual": 50,
+            "ideal_range": "65–80",
+            "explanation": "The soil is too dry, which could delay sprouting and weaken early development."
+          }
+        ]
+      }
+    },
+    {
+      "SproutDevelopment": {
+        "status": "✅ Conditions are improving but still need monitoring.",
+        "issues": [
+          {
+            "parameter": "Soil pH",
+            "actual": 6.8,
+            "ideal_range": "5.5–6.5",
+            "explanation": "Slightly above ideal pH; nutrient uptake is improving but not yet optimal."
+          },
+          {
+            "parameter": "Soil Moisture",
+            "actual": 60,
+            "ideal_range": "65–80",
+            "explanation": "Moisture is approaching the ideal range, but additional watering may help root establishment."
+          }
+        ]
+      }
+    },
+    {
+      "SproutDevelopment": {
+        "status": "✅ Growing steadily with minor imbalances.",
+        "issues": [
+          {
+            "parameter": "Soil pH",
+            "actual": 6.5,
+            "ideal_range": "5.5–6.5",
+            "explanation": "pH is now ideal, supporting better nutrient absorption and shoot health."
+          },
+          {
+            "parameter": "Soil Moisture",
+            "actual": 60,
+            "ideal_range": "65–80",
+            "explanation": "Slightly low moisture may slow down growth, especially during shoot elongation."
+          }
+        ]
+      }
+    },
+    {
+      "SproutDevelopment": {
+        "status": "⚠ Leaf growth is active but some conditions could be better.",
+        "issues": [
+          {
+            "parameter": "Soil pH",
+            "actual": 7.0,
+            "ideal_range": "5.5–6.5",
+            "explanation": "Slightly high pH may reduce nutrient availability during leaf development."
+          },
+          {
+            "parameter": "Soil Moisture",
+            "actual": 75,
+            "ideal_range": "65–80",
+            "explanation": "Moisture is ideal and supports leaf turgidity and growth."
+          }
+        ]
+      }
+    },
+    {
+      "SproutDevelopment": {
+        "status": "✅ Optimal conditions for maturation.",
+        "issues": [
+          {
+            "parameter": "Soil pH",
+            "actual": 6.2,
+            "ideal_range": "5.5–6.5",
+            "explanation": "Soil pH is optimal, ensuring balanced nutrient uptake during final growth stages."
+          },
+          {
+            "parameter": "Soil Moisture",
+            "actual": 70,
+            "ideal_range": "65–80",
+            "explanation": "Moisture levels are ideal, supporting strong maturation and tuber growth."
+          }
+        ]
+      }
+    }
+  ]
+}

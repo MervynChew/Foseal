@@ -1,0 +1,674 @@
+{
+  "address": "0xee01d7c6f8EBb533dd7FFC358eCE99376Ba2e9d8",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "airTemperature",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "airHumidity",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "soilMoisture",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "soilPH",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "nitrogen",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "phosphorus",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "potassium",
+          "type": "uint256"
+        }
+      ],
+      "name": "CropStored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        }
+      ],
+      "name": "CropUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "temperature",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "humidity",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        }
+      ],
+      "name": "StorageStored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        }
+      ],
+      "name": "StorageUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "temperature",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "humidity",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransportationStored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batch_id",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "productionLevel",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "date",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransportationUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        }
+      ],
+      "name": "getAverageCropData",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "avgAirTemperature",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgAirHumidity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgSoilMoisture",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgSoilPH",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgNitrogen",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgPhosphorus",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "avgPotassium",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCropByBatchID",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "batch_id",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "productionLevel",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "date",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "airTemperature",
+              "type": "int256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "airHumidity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "soilMoisture",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "soilPH",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nitrogen",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "phosphorus",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "potassium",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct CropStorage.CropData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        }
+      ],
+      "name": "getStorageByBatchID",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "batch_id",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "productionLevel",
+              "type": "uint8"
+            },
+            {
+              "internalType": "int256",
+              "name": "temperature",
+              "type": "int256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "humidity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "date",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct CropStorage.Storage",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        }
+      ],
+      "name": "getTransportationByBatchId",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "batch_id",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "productionLevel",
+              "type": "uint8"
+            },
+            {
+              "internalType": "int256",
+              "name": "temperature",
+              "type": "int256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "humidity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "date",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct CropStorage.Transportation",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "storageKeys",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_airTemperature",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_airHumidity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_soilMoisture",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_soilPH",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_nitrogen",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_phosphorus",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_potassium",
+          "type": "uint256"
+        }
+      ],
+      "name": "storeCrop",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int256",
+          "name": "_temperature",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_humidity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "storeStorage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int256",
+          "name": "_temperature",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_humidity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "storeTransportation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transportationKeys",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateCrop",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateStorage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_batch_id",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_productionLevel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_date",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateTransportation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+}

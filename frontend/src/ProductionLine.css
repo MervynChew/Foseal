@@ -1,0 +1,55 @@
+/* src/components/ProductionLine.css */
+
+.production-line-page {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.h1 {
+  color: #3d6b35;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #333;
+}
+
+.camera-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3d6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.camera-button:hover {
+  background-color: #f4d35e;
+}
+
+.camera-preview {
+  margin-top: 20px;
+  max-width: 500px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.camera-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
