@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Consumer.css';
 import CropScoreDashboard from './components/CropScoreDashboard';
 import DashboardCards from "./components/DashboardCards";
+import DataLLM from "./components/DataLLM"
 
 function Consumer() {
 
@@ -155,6 +156,12 @@ function Consumer() {
             toggleCard={toggleCard}
           />
         </div>
+      )}
+
+      {searchCrop && (
+          <DataLLM
+            batchId={searchCrop}
+          />
       )}
 
       
