@@ -3,6 +3,7 @@ import './Consumer.css';
 import CropScoreDashboard from './components/CropScoreDashboard';
 import DashboardCards from "./components/DashboardCards";
 import DataLLM from "./components/DataLLM"
+import ConsumerQR from "./components/ConsumerQR"
 
 function Consumer() {
 
@@ -160,6 +161,12 @@ function Consumer() {
 
       {searchCrop && (
           <DataLLM
+            batchId={searchCrop}
+          />
+      )}
+
+      {searchCrop && (
+          <ConsumerQR
             batchId={searchCrop}
           />
       )}
