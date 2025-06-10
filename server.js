@@ -9,6 +9,7 @@ require('dotenv').config();
 
 // Initialize Firebase Admin
 const serviceAccount = require('./foseal-33f5f-firebase-adminsdk-fbsvc-ce58e81345.json');
+const { TASK_COMPILE_SOLIDITY_LOG_NOTHING_TO_COMPILE } = require('hardhat/builtin-tasks/task-names');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -120,24 +121,34 @@ async function uploadToBlockchain(reading) {
 
     } else if (ProductionLevel === 2) {
       // // storeStorage
-      // const temperature = Math.round(reading.air_temperature);
-      // const humidity = Math.floor(reading.air_humidity);
       const rawTemp = Math.round(reading.temperature);
       const rawHum = Math.floor(reading.humidity);
-
 
       if (typeof rawTemp !== 'number' || typeof rawHum !== 'number') {
         throw new Error(`Missing or invalid temperature/humidity in reading: ${JSON.stringify(reading)}`);
       }
 
 
-      console.log("storeStorage inputs:", {
+      console.log("rawTemp:", rawTemp);
+      console.log("rawHum:", rawHum);
+
+      const temperature = Math.round(rawTemp);
+      const humidity = Math.floor(rawHum);
+
+
+      console.log("stoStorage inputs:", {
         batch_id,
         ProductionLevel,
         temperature,
         humidity,
         date
       });
+
+      // Safeguard
+      if (isNaN(temperature) || isNaN(humidity)) {
+        console.error("❌ Invalid temperature or humidity values:", temperature, humidity);
+        return; // Prevent blockchain call
+      }
 
       tx = await _contract.storeStorage(
         batch_id,
@@ -149,12 +160,7 @@ async function uploadToBlockchain(reading) {
 
       await tx.wait();
 
-      if (ProductionLevel === 1 || ProductionLevel === 2) {
-      if (typeof reading.air_temperature !== 'number' || typeof reading.air_humidity !== 'number') {
-        console.error("🚫 Invalid reading for transportation/storage:", reading);
-        return false;
-      }
-    }
+     
 
 
 

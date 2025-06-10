@@ -38,9 +38,10 @@ const ConsumerQR = ({ batchId }) => {
         );
         setContract(_contract);
 
-        const [cropEntries, transportationEntries] = await Promise.all([
+        const [cropEntries, transportationEntries, storageEntries] = await Promise.all([
           _contract.getAverageCropData(batchId),
           _contract.getTransportationByBatchId(batchId),
+          _contract.getStorageByBatchID(batchId),
         ]);
 
         if (cropEntries && cropEntries.length > 0) {
@@ -59,15 +60,28 @@ const ConsumerQR = ({ batchId }) => {
           var { temperature, humidity, date } = parsedTransportation;
         }
 
+        
+        if (storageEntries && storageEntries.length > 0) {
+          const parsedStorage = parseStorageData(storageEntries);
+          setStorageData(parsedStorage);
+
+          // Destructure transportation data here
+          var { temperature_storage, humidity_storage, date_storage } = parsedStorage;
+        }
+
+        
+
 
         console.log("Crop Entries:", cropEntries);
         console.log("Transportation:", transportationEntries);
+        console.log("Storage:", storageEntries);
 
         // Prepare the data to encode into QR
         const qrPayload = {
           batchId,
           cropScores: cropEntries,
           transportationData: transportationEntries,
+          storageData: storageEntries,
         };
 
         const readableText = `
@@ -89,6 +103,12 @@ const ConsumerQR = ({ batchId }) => {
           🌡️  Temperature : ${temperature}°C
           💧  Humidity  : ${humidity}%
           📅  Date  : ${new Date(Number(date) * 1000).toLocaleString()}
+
+          🚚 Storage
+          ──────────────
+          🌡️  Temperature : ${temperature_storage}°C
+          💧  Humidity  : ${humidity_storage}%
+          📅  Date  : ${new Date(Number(date_storage) * 1000).toLocaleString()}
           `.trim();
 
 
@@ -127,6 +147,16 @@ const ConsumerQR = ({ batchId }) => {
       temperature: Number(data[2]),
       humidity: Number(data[3]),
       date: Number(data[4]),
+    };
+  };
+
+  const parseStorageData = (data) => {
+    return {
+      batch_id_storage: data[0],
+      productionLevel_storage: Number(data[1]),
+      temperature_storage: Number(data[2]),
+      humidity_storage: Number(data[3]),
+      date_storage: Number(data[4]),
     };
   };
 

@@ -263,7 +263,7 @@ contract CropStorage {
             Storage memory s = storageConditions[storageKeys[i]];
             if (
                 keccak256(abi.encodePacked(s.batch_id)) == keccak256(abi.encodePacked(_batch_id)) &&
-                s.productionLevel == 1
+                s.productionLevel == 2
             ) {
                 return s;
             }

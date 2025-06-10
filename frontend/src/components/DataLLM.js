@@ -42,7 +42,7 @@ const DataLLM = ({ batchId }) => {
         const [cropEntries, transportationEntries, storageEntries] = await Promise.all([
           _contract.getAverageCropData(batchId),
           _contract.getTransportationByBatchId(batchId),
-          //_contract.getStorageByBatchID(batchId), // To Ivan: for now no faucet, when i upload data for this should be ok liao
+          _contract.getStorageByBatchID(batchId), // To Ivan: for now no faucet, when i upload data for this should be ok liao
         ]);
 
         console.log("Raw crop data:", cropEntries);
